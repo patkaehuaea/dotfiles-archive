@@ -4,6 +4,7 @@
 colorscheme solarized
 " syntax on " syntax highlighting on
 syntax enable
+let mapleader =","
 let g:solarized_termtrans = 1
 call togglebg#map("<F5>")
 if has('gui_running')
@@ -23,37 +24,38 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Keep Plugin commands between vundle#begin/end.
-" let Vundle manage Vundle
+"let Vundle manage Vundle
 Plugin 'VundleVim/Vundle.vim'
 " Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
 Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sensible'
-Plugin 'justinmk/vim-sneak'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tpope/vim-surround'
-Plugin 'dkprice/vim-easygrep'
-Plugin 'editorconfig/editorconfig-vim'
+Plugin 'fatih/vim-go'
+" Plugin 'jistr/vim-nerdtree-tabs'
+" Plugin 'vim-airline/vim-airline'
+" Plugin 'vim-airline/vim-airline-themes'
+" Plugin 'tpope/vim-fugitive'
+" Plugin 'tpope/vim-sensible'
+" Plugin 'justinmk/vim-sneak'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'tpope/vim-surround'
+" Plugin 'dkprice/vim-easygrep'
+" Plugin 'editorconfig/editorconfig-vim'
 " visual undo list
-Plugin 'sjl/gundo.vim'
+" Plugin 'sjl/gundo.vim'
 " Plugin 'majutsushi/tagbar'
 " markdown preview: opens browser with live reload when vim opens .md
-Plugin 'suan/vim-instant-markdown'
-Plugin 'godlygeek/tabular'
+" Plugin 'suan/vim-instant-markdown'
+" Plugin 'godlygeek/tabular'
 " language tools
-Plugin 'scrooloose/syntastic'
-Plugin 'millermedeiros/vim-esformatter'
-Plugin 'digitaltoad/vim-pug'
-" Plugin 'elzr/vim-json'
+" Plugin 'scrooloose/syntastic'
+" Plugin 'millermedeiros/vim-esformatter'
+" Plugin 'digitaltoad/vim-pug'
+Plugin 'elzr/vim-json'
 " Plugin 'SirVer/ultisnips'
 "Plugin 'sheerun/vim-polyglot'
 " plugins from http://vim-scripts.org/vim/scripts.html
-Plugin 'node.js'
-Plugin 'SuperTab'
+" Plugin 'node.js'
+" Plugin 'SuperTab'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
@@ -65,9 +67,7 @@ Plugin 'SuperTab'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 " TypeScript
-Plugin 'leafgarland/typescript-vim'
-" Vue.js
-Plugin 'posva/vim-vue'
+" Plugin 'leafgarland/typescript-vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -277,30 +277,30 @@ let NERDTreeIgnore=['\.DS_Store$']
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Toggle NERDtree with C-n
-map ,n <plug>NERDTreeTabsToggle<CR>
+map ,n <plug>:NERDTreeToggle<CR>
 " Autoclose if only NERDtree is left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
-let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
-let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+" let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
+" let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_eslint_checker = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_enable_tslint_checker = 1
-let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-let g:syntastic_enable_pug_checker = 1
-let g:syntastic_pug_checkers = ['jade','pug']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_enable_eslint_checker = 1
+" let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_enable_tslint_checker = 1
+" let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+" let g:syntastic_enable_pug_checker = 1
+" let g:syntastic_pug_checkers = ['jade','pug']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
