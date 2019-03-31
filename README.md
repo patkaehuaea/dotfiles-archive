@@ -1,4 +1,4 @@
-[![Beerpay](https://beerpay.io/atomantic/dotfiles/badge.svg?style=flat-square)](https://beerpay.io/atomantic/dotfiles)
+[![Build Status](https://travis-ci.org/patkaehuaea/dotfiles.svg?branch=master)](https://travis-ci.org/patkaehuaea/dotfiles)
 
 # \\[._.]/ - Hi, I'm the MacOS bot
 
