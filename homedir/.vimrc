@@ -317,6 +317,13 @@ nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 " let g:syntastic_enable_pug_checker = 1
 " let g:syntastic_pug_checkers = ['jade','pug']
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=/usr/local/lib/python3.7/site-packages/powerline/bindings/vim
+set laststatus=2
+set t_Co=256
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
