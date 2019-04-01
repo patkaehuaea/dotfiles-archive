@@ -55,7 +55,7 @@ Plugin 'fatih/vim-go'
 " Plugin 'suan/vim-instant-markdown'
 " Plugin 'godlygeek/tabular'
 " language tools
-" Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " Plugin 'millermedeiros/vim-esformatter'
 " Plugin 'digitaltoad/vim-pug'
 Plugin 'elzr/vim-json'
@@ -299,23 +299,25 @@ nnoremap <silent> <Leader>v :NERDTreeFind<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
-" let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
-" let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
+let g:syntastic_html_tidy_quiet_messages = { "level": "warnings" }
+let g:syntastic_html_tidy_ignore_errors = [ '<template> is not recognized!' ]
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_enable_eslint_checker = 1
-" let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_enable_tslint_checker = 1
-" let g:syntastic_typescript_checkers = ['tslint', 'tsc']
-" let g:syntastic_enable_pug_checker = 1
-" let g:syntastic_pug_checkers = ['jade','pug']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_enable_eslint_checker = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_enable_tslint_checker = 1
+let g:syntastic_typescript_checkers = ['tslint', 'tsc']
+let g:syntastic_enable_pug_checker = 1
+let g:syntastic_pug_checkers = ['jade','pug']
+let g:syntastic_ruby_checkers = ['rubocop', 'foodcritic']
+let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/cookstyle'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
