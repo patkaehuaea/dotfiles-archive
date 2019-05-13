@@ -21,6 +21,11 @@ alias bpc='git add -A . && git cam "$(buzzphrase 2)" && git push'
 alias gitdev='git checkout develop; git-up; git branch --merged develop | grep -v "\* develop" | xargs -n 1 git branch -d; git branch;'
 
 #############################
+# Applications
+
+alias vnc='/Applications/VNC\ Viewer.app/Contents/MacOS/vncviewer'
+
+#############################
 # Utilities
 
 # Lock the screen (when going AFK)
