@@ -40,6 +40,12 @@ Session.vim
 *~
 
 #########
+# Terraform #
+#########
+.tfstate
+.templ
+
+#########
 # Maven #
 #########
 target/
