@@ -88,8 +88,8 @@ alias port-forward-disable="sudo pfctl -F all -f /etc/pf.conf"
 alias port-forward-list="sudo pfctl -s nat"
 
 # Set the extended MacOS attributes on a file such that Quicklook will open it as text
-alias qltext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
-#alias qltext2='osascript -e tell application "Finder" to set file type of ((POSIX file "$1") as alias) to "TEXT"'
+# alias qltext='xattr -wx com.apple.FinderInfo "54 45 58 54 21 52 63 68 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" $1'
+# alias qltext2='osascript -e tell application "Finder" to set file type of ((POSIX file "$1") as alias) to "TEXT"'
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
@@ -107,6 +107,8 @@ alias vtop="vtop --theme wizard"
 alias jsonfix="pbpaste | jq . | pbcopy"
 
 alias lookbusy="cat /dev/urandom | hexdump -C | grep \"34 32\""
+
+# Aliases for CLI based todo utility.'
 alias td="todo.sh"
 alias tda="todo.sh add"
 alias tdl="todo.sh list"
