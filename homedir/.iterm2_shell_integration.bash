@@ -1,4 +1,5 @@
 #!/bin/bash
+# shellcheck disable=SC2059,2046,2155,2166,2181,2031,2124,2086,2154,1007,2016,2030
 # The iTerm2 customizations fall under the following license:
 #
 # This program is free software; you can redistribute it and/or
