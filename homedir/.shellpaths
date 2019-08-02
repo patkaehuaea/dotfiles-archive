@@ -1,6 +1,5 @@
 #My Scripts
 export PATH=$PATH:.
-#export PATH=$PATH:~/.dotfiles/scripts
 
 #Brew
 export PATH=/usr/local/sbin:$PATH
@@ -10,6 +9,8 @@ export PATH=/usr/local/bin:$PATH
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
+
+export PATH=$PATH:~/Library/Python/3.7/bin/
 
 # The next line updates PATH for the Google Cloud SDK.
 #source "/Users/$(whoami)/Downloads/google-cloud-sdk/path.zsh.inc"
