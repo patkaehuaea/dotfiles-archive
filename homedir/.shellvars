@@ -26,3 +26,5 @@ export MYDEVAPPS=/Applications/Dev
 #########################################################################
 export FONTCONFIG_PATH=/opt/X11/lib/X11/fontconfig
 export NVM_DIR=~/.nvm
+# Resolves issues resolving SBUX self-signed certs when invoking az login
+export REQUESTS_CA_BUNDLE=$(python3 -c "from requests.utils import DEFAULT_CA_BUNDLE_PATH; print(DEFAULT_CA_BUNDLE_PATH)")
