@@ -152,11 +152,7 @@ brew cask install iTerm2
 
 # install slack
 running "installing Slack"
-brew cask install slack 
- 
-# install Chefdk: https://github.com/chef/chef-dk#
-running "installing ChefDK"
-brew cask install chef/chef/chefdk
+brew cask install slack
 
 # skip those GUI clients, git command-line all the way
 require_brew git
