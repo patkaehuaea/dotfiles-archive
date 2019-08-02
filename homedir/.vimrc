@@ -2,7 +2,7 @@
 " Must Have
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
-" syntax on " syntax highlighting on
+syntax on " syntax highlighting on
 syntax enable
 let mapleader =","
 let g:solarized_termtrans = 1
@@ -33,6 +33,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'dougireton/vim-chef'
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'mrk21/yaml-vim'
+Plugin 'tarekbecker/vim-yaml-formatter'
 " Plugin 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
 Plugin 'scrooloose/nerdtree'
@@ -62,7 +64,6 @@ Plugin 'elzr/vim-json'
 " Plugin 'SirVer/ultisnips'
 "Plugin 'sheerun/vim-polyglot'
 " plugins from http://vim-scripts.org/vim/scripts.html
-" Plugin 'node.js'
 " Plugin 'SuperTab'
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -213,11 +214,6 @@ set foldopen-=undo " don't open folds when you undo stuff
 let b:match_ignorecase = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Perl
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let perl_extended_vars=1 " highlight advanced perl vars inside strings
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Custom Functions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Select range, then hit :SuperRetab($width) - by p0g and FallingCow
@@ -311,12 +307,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_eslint_checker = 1
-let g:syntastic_javascript_checkers = ['eslint']
+" let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_enable_tslint_checker = 1
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_enable_pug_checker = 1
-let g:syntastic_pug_checkers = ['jade','pug']
-let g:syntastic_ruby_checkers = ['rubocop', 'foodcritic']
+" let g:syntastic_pug_checkers = ['jade','pug']
+let g:syntastic_ruby_checkers = ['foodcritic']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/cookstyle'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline
