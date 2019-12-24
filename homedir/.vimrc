@@ -99,7 +99,7 @@ filetype plugin indent on    " required
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set history=1000 " How many lines of history to remember
+set history=5000 " How many lines of history to remember
 set cf " enable error files and error jumping
 " set clipboard+=unnamed " turns out I do like sharing windows clipboard
 set ffs=unix,dos,mac " support all three, in this order
@@ -314,6 +314,8 @@ let g:syntastic_enable_pug_checker = 1
 " let g:syntastic_pug_checkers = ['jade','pug']
 let g:syntastic_ruby_checkers = ['foodcritic']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/cookstyle'
+"let g:syntastic_yaml_checkers = ['yamllint']
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
