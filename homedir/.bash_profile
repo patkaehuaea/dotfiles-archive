@@ -1,4 +1,7 @@
-#eval "$(chef shell-init bash)"
+# Supress warning message when default shell
+# is changed from zsh to bash. Applies to any
+# Max OSX release starting with Catalina.
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Powerline
 powerline-daemon -q
