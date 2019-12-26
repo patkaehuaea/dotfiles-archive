@@ -1,12 +1,13 @@
+# Powerline requires PATH to include the Python 'bin' directory.
+# Paths are set in ~/.profile so call before any references to
+# powerline binaries.
+source ~/.profile
+
 # Supress warning message when default shell
 # is changed from zsh to bash. Applies to any
 # Max OSX release starting with Catalina.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-# Solves issue where powerline.sh is unable to find the powerline-config
-# binary due to some path issue.
-# ref problem: https://github.com/powerline/powerline/issues/1960
-# ref solution: https://askubuntu.com/questions/283908/how-can-i-install-and-use-powerline-plugin/953875#953875
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
@@ -18,4 +19,3 @@ if [ -f `which powerline-daemon` ]; then
 fi
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
-source ~/.profile
