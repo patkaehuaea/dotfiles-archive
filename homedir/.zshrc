@@ -4,22 +4,22 @@ export ZSH=$HOME/.dotfiles/oh-my-zsh
 # POWERLEVEL9K_MODE='awesome-patched'
 export ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+# Set DEFAULT_USER so context is only visible when
+# not running as default e.g. something other than
+# pkaehuae@pkaehuae17857.
+DEFAULT_USER=$USER
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir nvm vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable context dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history time)
 # colorcode test
 # for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
 POWERLEVEL9K_NVM_FOREGROUND='000'
 POWERLEVEL9K_NVM_BACKGROUND='072'
 POWERLEVEL9K_SHOW_CHANGESET=true
-#export ZSH_THEME="random"
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
-
-# disable colors in ls
-# export DISABLE_LS_COLORS="true"
 
 # disable autosetting terminal title.
 export DISABLE_AUTO_TITLE="true"
@@ -34,6 +34,3 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Customize to your needs...
 unsetopt correct
-
-# run fortune on new terminal :)
-# fortune
