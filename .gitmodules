@@ -7,3 +7,6 @@ url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
+[submodule "z-sh"]
+	path = z-sh
+	url = git@github.com:rupa/z.git
