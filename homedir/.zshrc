@@ -12,7 +12,7 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 DEFAULT_USER=$USER
 
 # Default format is e.g. 28-12-19 (%D{%d.%m.%y}).
-POWERLEVEL9K_DATE_FORMAT=%D{%m.%d.%y}
+POWERLEVEL9K_DATE_FORMAT=%D{%m.%d}
 
 # https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
 # https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
@@ -32,7 +32,7 @@ export DISABLE_AUTO_TITLE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.dotfiles/oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(colorize compleat dirpersist autojump git gulp history cp)
+plugins=(jira colorize compleat dirpersist autojump git gulp history cp)
 
 source $ZSH/oh-my-zsh.sh
 
