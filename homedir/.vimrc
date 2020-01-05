@@ -5,93 +5,78 @@ colorscheme solarized
 syntax on " syntax highlighting on
 syntax enable
 let mapleader =","
-let g:solarized_termtrans = 1
-call togglebg#map("<F5>")
-if has('gui_running')
-    set background=light
-else
-    set background=dark
+" let g:solarized_termtrans = 1
+" call togglebg#map("<F5>")
+"if has('gui_running')
+"    set background=light
+"else
+"    set background=dark
+"endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-plug
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ref: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Pathogen
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-execute pathogen#infect()
+call plug#begin('~/.vim/plugged')
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Keep Plugin commands between vundle#begin/end.
-"let Vundle manage Vundle
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'dougireton/vim-chef'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'mrk21/yaml-vim'
-Plugin 'tarekbecker/vim-yaml-formatter'
-" Plugin 'Valloric/YouCompleteMe'
+Plug 'arcticicestudio/nord-vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'dougireton/vim-chef'
+Plug 'vim-ruby/vim-ruby'
+Plug 'mrk21/yaml-vim'
+Plug 'tarekbecker/vim-yaml-formatter'
+" Plug 'Valloric/YouCompleteMe'
 " Navigation (IDE frame)
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'fatih/vim-go'
-" Plugin 'jistr/vim-nerdtree-tabs'
-" Plugin 'vim-airline/vim-airline'
-" Plugin 'vim-airline/vim-airline-themes'
-" Plugin 'tpope/vim-fugitive'
-" Plugin 'tpope/vim-sensible'
-" Plugin 'justinmk/vim-sneak'
-" Plugin 'airblade/vim-gitgutter'
-" Plugin 'tpope/vim-surround'
-" Plugin 'dkprice/vim-easygrep'
-" Plugin 'editorconfig/editorconfig-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'fatih/vim-go'
+" Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-sensible'
+" Plug 'justinmk/vim-sneak'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'tpope/vim-surround'
+" Plug 'dkprice/vim-easygrep'
+" Plug 'editorconfig/editorconfig-vim'
 " visual undo list
-" Plugin 'sjl/gundo.vim'
-" Plugin 'majutsushi/tagbar'
+" Plug 'sjl/gundo.vim'
+" Plug 'majutsushi/tagbar'
 " markdown preview: opens browser with live reload when vim opens .md
-" Plugin 'suan/vim-instant-markdown'
-" Plugin 'godlygeek/tabular'
+" Plug 'suan/vim-instant-markdown'
+" Plug 'godlygeek/tabular'
 " language tools
-Plugin 'scrooloose/syntastic'
-" Plugin 'millermedeiros/vim-esformatter'
-" Plugin 'digitaltoad/vim-pug'
-Plugin 'elzr/vim-json'
-" Plugin 'SirVer/ultisnips'
-"Plugin 'sheerun/vim-polyglot'
+Plug 'scrooloose/syntastic'
+" Plug 'millermedeiros/vim-esformatter'
+" Plug 'digitaltoad/vim-pug'
+Plug 'elzr/vim-json'
+" Plug 'SirVer/ultisnips'
+"Plug 'sheerun/vim-polyglot'
 " plugins from http://vim-scripts.org/vim/scripts.html
-" Plugin 'SuperTab'
+" Plug 'SuperTab'
 " Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
+" Plug 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
+" Plug 'file:///home/gmarik/path/to/plugin'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+" Plug 'ascenator/L9', {'name': 'newL9'}
 " TypeScript
-" Plugin 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+call plug#end()
+
+" colorscheme nord
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
