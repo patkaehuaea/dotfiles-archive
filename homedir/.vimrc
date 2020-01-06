@@ -1,20 +1,5 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Must Have
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
-syntax on " syntax highlighting on
-syntax enable
-let mapleader =","
-" let g:solarized_termtrans = 1
-" call togglebg#map("<F5>")
-"if has('gui_running')
-"    set background=light
-"else
-"    set background=dark
-"endif
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vim-plug
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ref: https://github.com/junegunn/vim-plug/wiki/tips#automatic-installation
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -25,68 +10,66 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
+" Nord theme for vim.
 Plug 'arcticicestudio/nord-vim'
-Plug 'VundleVim/Vundle.vim'
+
+" A vim plugin for syntax highlighting Ansible's common filetypes.
+Plug 'pearofducks/ansible-vim'
+
+" Navigation for Chef cookbooks and recipes.
 Plug 'dougireton/vim-chef'
+
+" Ruby plugin for vim.
 Plug 'vim-ruby/vim-ruby'
+
+" Syntax coloring and functions for YAML.
 Plug 'mrk21/yaml-vim'
-Plug 'tarekbecker/vim-yaml-formatter'
-" Plug 'Valloric/YouCompleteMe'
-" Navigation (IDE frame)
+
+" File system explorer for vim.
 Plug 'scrooloose/nerdtree'
+
+" NERDTree plugin for git status.
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+" Langung support for golang in vim.
 Plug 'fatih/vim-go'
-" Plug 'jistr/vim-nerdtree-tabs'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'tpope/vim-fugitive'
-" Plug 'tpope/vim-sensible'
-" Plug 'justinmk/vim-sneak'
-" Plug 'airblade/vim-gitgutter'
-" Plug 'tpope/vim-surround'
-" Plug 'dkprice/vim-easygrep'
-" Plug 'editorconfig/editorconfig-vim'
-" visual undo list
-" Plug 'sjl/gundo.vim'
-" Plug 'majutsushi/tagbar'
-" markdown preview: opens browser with live reload when vim opens .md
-" Plug 'suan/vim-instant-markdown'
-" Plug 'godlygeek/tabular'
-" language tools
+
+Plug 'sjl/gundo.vim'
+
+" Open browser window for markdown preview.
+Plug 'suan/vim-instant-markdown'
+
+"Syntax checking plugin for vim.
 Plug 'scrooloose/syntastic'
-" Plug 'millermedeiros/vim-esformatter'
-" Plug 'digitaltoad/vim-pug'
+
+" JSON syntax and highlighting.
 Plug 'elzr/vim-json'
-" Plug 'SirVer/ultisnips'
-"Plug 'sheerun/vim-polyglot'
-" plugins from http://vim-scripts.org/vim/scripts.html
-" Plug 'SuperTab'
-" Git plugin not hosted on GitHub
-" Plug 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plug 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plug 'ascenator/L9', {'name': 'newL9'}
-" TypeScript
-" Plug 'leafgarland/typescript-vim'
+
+" Smoother scrolling in editor.
+Plug 'psliwka/vim-smoothie'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Must Have
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#end()
 
-" colorscheme nord
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set colorscheme after installing plugins to prevent
+" 'colorscheme not found' error.
+colorscheme nord
+syntax on " syntax highlighting on
+syntax enable
+let mapleader =","
+
 " set UTF-8 encoding
 set enc=utf-8
 set fenc=utf-8
 set termencoding=utf-8
-set history=5000 " How many lines of history to remember
+set history=10000
 set cf " enable error files and error jumping
-" set clipboard+=unnamed " turns out I do like sharing windows clipboard
 set ffs=unix,dos,mac " support all three, in this order
 set viminfo+=! " make sure it can save viminfo
 set isk+=_,$,@,%,# " none of these should be word dividers, so make them not be
@@ -95,6 +78,8 @@ set nosol " leave my cursor where it was
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups/Sessions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Automatically read the file when it's changed outside VIM.
+set autoread
 set nobackup
 set nowb
 set noswapfile
@@ -165,7 +150,7 @@ set ignorecase " case insensitive by default
 set smartcase " if there are caps, go case-sensitive
 set completeopt=menu,longest,preview " improve the way autocomplete works
 set cursorcolumn " show the current column
-set cursorline
+set cursorline  " Enable current line indicator
 " hi CursorLine term=underline ctermbg=008 guibg=#493a35
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -180,18 +165,6 @@ set foldmethod=marker " Fold on the marker
 set foldlevel=100 " Don't autofold anything (but I can still fold manually)
 set foldopen-=search " don't open folds when you search into them
 set foldopen-=undo " don't open folds when you undo stuff
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CTags
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let Tlist_Ctags_Cmd = 'ctags' " Location of ctags
-"let Tlist_Sort_Type = "name" " order by
-"let Tlist_Use_Right_Window = 1 " split to the right side of the screen
-"let Tlist_Compact_Format = 1 " show small meny
-"let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-"let Tlist_File_Fold_Auto_Close = 0 " Do not close tags for other files
-"let Tlist_Enable_Fold_Column = 1 " Do show folding tree
-"let Tlist_WinWidth = 50 " 50 cols wide, so I can (almost always) read my functions
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Matchit
@@ -292,14 +265,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_enable_eslint_checker = 1
-" let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_enable_tslint_checker = 1
 let g:syntastic_typescript_checkers = ['tslint', 'tsc']
 let g:syntastic_enable_pug_checker = 1
-" let g:syntastic_pug_checkers = ['jade','pug']
 let g:syntastic_ruby_checkers = ['foodcritic']
 let g:syntastic_ruby_rubocop_exec = '/usr/local/bin/cookstyle'
-"let g:syntastic_yaml_checkers = ['yamllint']
+let g:syntastic_yaml_checkers = ['yamllint']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline
@@ -312,4 +283,3 @@ set t_Co=256
 " Other
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#streak = 1
-let g:airline_theme='bubblegum'
