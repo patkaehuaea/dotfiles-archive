@@ -1,9 +1,9 @@
 [submodule "homedir/.vim/bundle/Vundle.vim"]
 path = homedir/.vim/bundle/Vundle.vim
-url = https://github.com/VundleVim/Vundle.vim.git
+url = git@github.com/VundleVim/Vundle.vim.git
 [submodule "build"]
 	path = build
-	url = https://github.com/caarlos0/shell-travis-build.git
+	url = git@github.com:caarlos0/shell-travis-build.git
 [submodule "oh-my-zsh"]
 	path = oh-my-zsh
 	url = git@github.com:ohmyzsh/ohmyzsh.git
