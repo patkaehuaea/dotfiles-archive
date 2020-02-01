@@ -5,7 +5,7 @@ url = https://github.com/VundleVim/Vundle.vim.git
 	path = build
 	url = https://github.com/caarlos0/shell-travis-build.git
 [submodule "oh-my-zsh"]
-	path = oh-my-zsh
+	path = homedir/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
 [submodule "z-zsh"]
 	path = z-zsh
