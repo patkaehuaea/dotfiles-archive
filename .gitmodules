@@ -10,6 +10,3 @@ url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "z-zsh"]
 	path = z-zsh
 	url = https://github.com/rupa/z.git
-[submodule "ohmyzsh"]
-	path = ohmyzsh
-	url = https://github.com/ohmyzsh/ohmyzsh.git
