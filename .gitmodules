@@ -7,6 +7,9 @@ url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "oh-my-zsh"]
 	path = homedir/.oh-my-zsh
 	url = https://github.com/ohmyzsh/ohmyzsh.git
+[submodule "powerlevel9k.zsh-theme"]
+	path =homedir/.oh-my-zsh/themes/powerlevel9k.zsh-theme
+	url = https://github.com/Powerlevel9k/powerlevel9k.git
 [submodule "z-zsh"]
 	path = z-zsh
 	url = https://github.com/rupa/z.git
