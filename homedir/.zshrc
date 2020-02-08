@@ -1,3 +1,10 @@
+# Instruct internationalized programs to use not change the language, but
+# sets the CTYPE to English and UTF-8 for encoding console output. This
+# setting will only apply to console and not affect the GUI.
+# ref: https://bbs.archlinux.org/viewtopic.php?id=220463
+# ref: https://stackoverflow.com/questions/30479607/explain-the-effects-of-export-lang-lc-ctype-lc-all
+export LC_CTYPE=en_us.UTF-8
+
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
