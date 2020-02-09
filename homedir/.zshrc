@@ -8,28 +8,30 @@ export LANG=en_US.UTF-8
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
 
-# if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
-# POWERLEVEL9K_MODE='awesome-patched'
-export ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+#ref: https://github.com/denysdovhan/spaceship-prompt
+export ZSH_THEME="spaceship-prompt/spaceship"
 
-# Set DEFAULT_USER so context is only visible when
-# not running as default e.g. something other than
-# pkaehuae@pkaehuae17857.
-DEFAULT_USER=$USER
+## if you want to use this, change your non-ascii font to Droid Sans Mono for Awesome
+## POWERLEVEL9K_MODE='awesome-patched'
+#export ZSH_THEME="powerlevel9k/powerlevel9k"
+#POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-# Default format is e.g. 28-12-19 (%D{%d.%m.%y}).
-POWERLEVEL9K_DATE_FORMAT=%D{%m.%d}
-
-# https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
-# https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable context dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history date time)
-# colorcode test
-# for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
-POWERLEVEL9K_NVM_FOREGROUND='000'
-POWERLEVEL9K_NVM_BACKGROUND='072'
-POWERLEVEL9K_SHOW_CHANGESET=true
+## Set DEFAULT_USER so context is only visible when
+## not running as default
+#DEFAULT_USER=$USER
+#
+## Default format is e.g. 28-12-19 (%D{%d.%m.%y}).
+#POWERLEVEL9K_DATE_FORMAT=%D{%m.%d}
+#
+## https://github.com/bhilburn/powerlevel9k#customizing-prompt-segments
+## https://github.com/bhilburn/powerlevel9k/wiki/Stylizing-Your-Prompt
+#POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable context dir vcs)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status history date time)
+## colorcode test
+## for code ({000..255}) print -P -- "$code: %F{$code}This is how your text would look like%f"
+#POWERLEVEL9K_NVM_FOREGROUND='000'
+#POWERLEVEL9K_NVM_BACKGROUND='072'
+#POWERLEVEL9K_SHOW_CHANGESET=true
 
 # Set to this to use case-sensitive completion
 export CASE_SENSITIVE="true"
